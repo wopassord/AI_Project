@@ -1,10 +1,10 @@
-import os
 import csv
 import numpy as np
 from sklearn.decomposition import PCA
 from sklearn.neighbors import KNeighborsClassifier
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
+from matplotlib.colors import to_rgba
+from sklearn.preprocessing import MinMaxScaler
 
 class ClasificadorAudios:
     def __init__(self, archivo_db="DB_Audios/parametros_DB.csv", archivo_candidato="DB_Audios/parametros_candidato.csv", n_componentes=3, k=4):
@@ -69,10 +69,6 @@ class ClasificadorAudios:
         """
         Genera un gráfico en 3D con los puntos escalados, conectando el candidato con sus k vecinos más cercanos.
         """
-        import matplotlib.pyplot as plt
-        from matplotlib.colors import to_rgba
-        from mpl_toolkits.mplot3d import Axes3D
-        from sklearn.preprocessing import MinMaxScaler
 
         # Escalar los datos entre -1 y 1
         scaler = MinMaxScaler(feature_range=(-1, 1))

@@ -98,4 +98,3 @@ class ProcesadorImagenes:
             if os.path.isfile(ruta_imagen):
                 print(f"Procesando imagen: {ruta_imagen}")
                 self.procesar_imagen_candidata(ruta_imagen)
-
